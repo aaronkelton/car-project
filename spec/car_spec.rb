@@ -30,7 +30,12 @@ describe("Car") do
   end
 
   describe ".colors" do
-    #
+
+    it "returns an array of color names" do
+      c = %w(blue black red green)
+      expect(Car.colors).to match_array(c)
+    end
+    
   end
 
   describe "#full_name" do
