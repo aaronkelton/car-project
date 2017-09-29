@@ -117,3 +117,15 @@ def no_output(&block)
     $stdout.reopen(original_stdout)
   end
 end
+
+def capture_output(&block)
+  original_stdout = $stdout.dup
+  output_catcher = StringIO.new
+  $stdout = output_catcher
+  begin
+    yield
+  ensure
+    $stdout = original_stdout
+  end
+  output_catcher.string
+end
