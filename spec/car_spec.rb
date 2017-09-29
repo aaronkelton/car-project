@@ -14,6 +14,7 @@ describe("Car") do
       car = Car.new
       car.year = 9999
       expect(car.year).to eq(9999)
+      # (car.year).should eq(9999)
     end
 
     it "allows reading and writing for :color" do
@@ -27,7 +28,7 @@ describe("Car") do
       expect(car.wheels).to eq(4)
     end
 
-    it "allows writing for :doors" 
+    it "allows writing for :doors"
   end
 
   describe ".colors" do
