@@ -47,13 +47,13 @@ describe 'Doubles' do
     expect(die.roll).to eq(6)  # continues returning last value
   end
 
-  xcontext 'with partial test doubles' do
+  context 'with partial test doubles' do
 
     it "allows stubbing instance methods on Ruby classes" do
       time = Time.new(2010, 1, 1, 12, 0, 0)
       allow(time).to receive(:year).and_return(1975)
 
-      expect(time.to_s).to eq('2010-01-01 12:00:00 -0500')
+      expect(time.to_s).to eq('2010-01-01 12:00:00 -0600')
       expect(time.year).to eq(1975)
     end
 
@@ -76,7 +76,7 @@ describe 'Doubles' do
       allow(Time).to receive(:now).and_return(fixed)
 
       expect(Time.now).to eq(fixed)
-      expect(Time.now.to_s).to eq('2010-01-01 12:00:00 -0500')
+      expect(Time.now.to_s).to eq('2010-01-01 12:00:00 -0600')
       expect(Time.now.year).to eq(2010)
     end
 
