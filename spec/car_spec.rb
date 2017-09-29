@@ -4,28 +4,28 @@ describe("Car") do
 
   describe("attributes") do
 
+    before(:example) do
+      @car = Car.new
+    end
+
     it("allows reading and writing for :make") do
-      car = Car.new
-      car.make=('Test')
-      expect(car.make).to(eq('Test'))
+      @car.make=('Test')
+      expect(@car.make).to(eq('Test'))
     end
 
     it "allows reading and writing for :year" do
-      car = Car.new
-      car.year = 9999
-      expect(car.year).to eq(9999)
-      # (car.year).should eq(9999)
+      @car.year = 9999
+      expect(@car.year).to eq(9999)
+      # (@car.year).should eq(9999)
     end
 
     it "allows reading and writing for :color" do
-      car = Car.new
-      car.color = 'red'
-      expect(car.color).to eq('red')
+      @car.color = 'red'
+      expect(@car.color).to eq('red')
     end
 
     it "allows reading for :wheels" do
-      car = Car.new
-      expect(car.wheels).to eq(4)
+      expect(@car.wheels).to eq(4)
     end
 
     it "allows writing for :doors"
