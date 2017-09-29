@@ -1,10 +1,12 @@
 require 'car'
 
-describe("Car") do
+describe(Car) do
 
   describe("attributes") do
 
-    subject { Car.new }
+    # "subject" is implicitly available when
+    # using the classname Car instead of 'Car' string
+    # subject { Car.new }
 
     # use "subject" instead of "let()"
     # if variable is subject of example
